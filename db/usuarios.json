@@ -1,0 +1,16 @@
+{
+"usuarios":[
+    {"id": 1,
+      "usuario":"ron.todo.poderoso@gmail.com",
+      "password":"123"
+     },
+
+     {
+      "id": 2,
+      "usuario":"maria.lopez@gmail.com",
+      "password":"123"
+     }
+    
+   ]
+
+}

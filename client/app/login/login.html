@@ -1,0 +1,20 @@
+<div>
+
+<div class="container">
+ 
+    <div>
+        <label><b>Username</b></label>
+        <input type="text" placeholder="{{vm.UserNameMessage}}" ng-model="vm.UserName" name="uname" required>
+    </div>
+
+    <div>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="{{vm.PasswordMessage}}"  ng-model="vm.Password" name="psw" required>
+    </div>
+ 
+<div>
+    <button  ng-click="vm.ValidateLogin()">Login</button>
+</div>
+
+  </div>
+</div>
