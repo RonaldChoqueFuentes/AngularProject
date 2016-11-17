@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularProjectApp')
-  .controller('LoginCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($state) {
      var vm = this;
      vm.UserName = '';
      vm.Password = '';
@@ -16,7 +16,10 @@ angular.module('angularProjectApp')
        var result = false;
        if(vm.UserName==='sa' && vm.Password=='123')
        { 
+         
          result = true;
+         //$state.
+         $state.go('categories');
        }
        
      }

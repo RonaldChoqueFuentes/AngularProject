@@ -6,6 +6,6 @@ angular.module('angularProjectApp')
       .state('categories', {
         url: '/categories',
         templateUrl: 'app/categories/categories.html',
-        controller: 'CategoriesCtrl'
+        controller: 'CategoriesCtrl as vmCategories'
       });
   });

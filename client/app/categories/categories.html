@@ -1,1 +1,29 @@
-<div>This is the categories view.</div>
+<table ng-table="vmCategories.tableParams" class="table" show-filter="true">
+		<tr ng-repeat="category in $data track by category.id">
+      <td title="'Id'" filter="{ id: 'number'}" sortable="'id'">
+			  {{category.id}}
+			</td>
+			<td title="'Marca'" filter="{ Marca: 'text'}" sortable="'Marca'">
+			  {{category.Marca}}
+			</td>
+			<td title="'Modelo'" filter="{ Modelo: 'text'}" sortable="'Modelo'">
+			  {{category.Modelo}}
+			</td>
+			<td title="'Precio'" filter="{ Precio: 'number'}" sortable="'Precio'">
+			  {{category.Precio}}
+			</td>
+		
+      <td title="'Opciones'">
+			  <button>Edit</button>
+			</td>
+
+	  </td>
+
+    <tr >
+		<td title="'Id'"></td>
+		<td title="'Marca'"></td>
+		<td title="'Modelo'"></td>
+		<td title="'Precio'"></td>
+		<td title="'Opciones'"></td>	
+	  </tr>
+</table>
