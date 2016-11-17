@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularProjectApp')
-  .controller('CategoriesCtrl', function (NgTableParams) {
+  .controller('CategoriesCtrl', function (NgTableParams,lodash,dialogs) {
       var vm = this;
 
        vm.edit = edit;
@@ -43,13 +43,13 @@ angular.module('angularProjectApp')
 
        function edit(category)
        {
-           /*     var options = {
+          /* var options = {
                 size: 'lg',
                 animation:true
             };
        
             var dialog = dialogs.create(
-                'app/main/list/angular/edit-dialog/edit-dialog.html',
+                'app/main/list/angular/edit-dialog/edit-Category.html',
                 'AngularEditController',
                 student,
                 options,
