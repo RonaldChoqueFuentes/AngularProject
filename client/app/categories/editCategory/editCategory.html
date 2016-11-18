@@ -1,0 +1,66 @@
+<div class="modal-header">
+  <h4>Edit Category 
+   <i tooltip-placement="auto bottom-left"  uib-tooltip="tool tip info help" 
+    class="fa fa-question-circle" aria-hidden="true"></i>
+  </h4>
+  
+    <button class="close modal-close-btn" type="button" ng-click="vmCategoryEdit.close()">
+       <i class="fa fa-times fa-lg"></i>
+    </button>
+</div>
+
+<div class="edit-content" cg-busy="vmCategoryEdit.promise">
+  <form name="formEdit" class="form-horizontal" novalidate>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Marca</label>
+      <div class="col-sm-4">
+        <input name="marca"
+               type="text"
+               class="form-control"
+               ng-minlength="3"
+               ng-maxlength="20"
+               ng-model="vmCategoryEdit.selected.Marca"
+               >
+      </div>
+    </div>
+   <div class="form-group">
+      <label class="col-sm-2 control-label">Modelo</label>
+      <div class="col-sm-4">
+        <input name="modelo"
+               type="text"
+               class="form-control"
+               ng-minlength="3"
+               ng-maxlength="20"
+               ng-model="vmCategoryEdit.selected.Modelo"
+               >
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label class="col-sm-2 control-label">Precio</label>
+      <div class="col-sm-4">
+        <input name="precio"
+               type="number"
+               class="form-control"
+               ng-minlength="3"
+               ng-maxlength="20"
+               ng-model="vmCategoryEdit.selected.Precio"
+               >
+      </div>
+     </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button  ng-click="vmCategoryEdit.saveChanges()" class="btn btn-primary">
+          Save
+        </button>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <button  ng-click="vmCategoryEdit.close()" class="btn btn-primary">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>

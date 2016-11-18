@@ -27,7 +27,7 @@
     "angular": "~1.4.0",
     "angular-sanitize": "~1.4.0"
   },
-  "overrodes":{
+  "overrides":{
     "font-awesome":{
       "main":"css/font-awesome.css"
     }

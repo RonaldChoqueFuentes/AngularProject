@@ -43,20 +43,20 @@ angular.module('angularProjectApp')
 
        function edit(category)
        {
-          /* var options = {
+            var options = {
                 size: 'lg',
                 animation:true
             };
        
             var dialog = dialogs.create(
-                'app/main/list/angular/edit-dialog/edit-Category.html',
-                'AngularEditController',
-                student,
+                'app/categories/editCategory/editCategory.html',
+                'EditCategoryCtrl',
+                category,
                 options,
-                'vmAngularEdit');
+                'vmCategoryEdit');
             dialog.result.then(function(s){
                 activate();
-            });*/
+            });
         }
   });
 
