@@ -20,15 +20,14 @@
 
      function saveChanges() 
      {
-        /*vm.selected.birthDate = 
-        $moment(data.birthDateObject).format('DD-MM-YYYY');
-        vm.promise = Course.update(
+       /* vm.promise = Course.update(
         vm.selected,
         {
           id: 'angular',
           student: data.id
         }
         );
+
         vm.promise.then(function(response){
             $uibModalInstance.close(response);
         });*/
@@ -39,5 +38,4 @@
       $uibModalInstance.close();
     }
   }
-
 }
