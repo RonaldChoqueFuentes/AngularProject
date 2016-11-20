@@ -1,0 +1,17 @@
+{
+"productos":[
+    { "id": 1,
+      "marca":"Toyota",
+      "modelo":"RAV4",
+      "precio":40000,
+      "insertedDate":"9-03-2016"
+     },
+     { "id": 2,
+      "marca":"Toyota",
+      "modelo":"pathfinder",
+      "precio":50000,
+      "insertedDate":"9-15-2016"
+     }
+   ]
+
+}

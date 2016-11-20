@@ -10,8 +10,17 @@
      var vm = this;
      vm.saveChanges = saveChanges;
      vm.close=close;
+     vm.isDateOpened = false;
+     vm.dateFormat = 'dd-MM-yyyy';
+     vm.dateOptions = { maxDate: new Date() };
+     vm.openDateSelector = openDateSelector;
      
      activate();
+     
+     function openDateSelector() {
+      vm.isDateOpened = true;
+    }
+
 
    function activate() {
       console.log('received', data);

@@ -48,6 +48,29 @@
                >
       </div>
      </div>
+
+ <div class="form-group" >
+      <label class="col-sm-2 control-label">Created Date</label>
+     <div class="col-sm-4">
+        <p class="input-group" >
+          <input name="date"
+                 type="text"
+                 ng-model="vmCategoryEdit.selected.InsertedDate"
+                 uib-datepicker-popup="{{vmCategoryEdit.dateFormat}}"
+                 datepicker-options="vmCategoryEdit.dateOptions"
+                 is-open="vmAngularEdit.isDateOpened"
+                 />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default"
+                        ng-click="vmCategoryEdit.openDateSelector()">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+        </p>
+        
+       </div>
+    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button  ng-click="vmCategoryEdit.saveChanges()" class="btn btn-primary">
