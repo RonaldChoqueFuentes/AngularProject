@@ -23,13 +23,14 @@ export function getAll(req, res)
 }
 
 export function get(req, res) {
+  
   jsonfile.readFile(FILE, function (err, obj) {
     if (err) {
       res.status(500).send('Internal Server Error');
     }
 
-    var array = lodash.find(obj.courses, function(course){
-      return course.key === req.params.id
+    var array = lodash.find(obj.Almacenes, function(Almacen){
+      return Almacen.key === req.params.id
     });
 
     if(!array) {

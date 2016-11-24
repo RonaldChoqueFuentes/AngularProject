@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularProjectApp')
-  .controller('CategoriesCtrl', function (NgTableParams,lodash,dialogs) {
+  .controller('CategoriesCtrl', function (NgTableParams,dialogs, Productos,lodash) {
       var vm = this;
 
        vm.edit = edit;
@@ -19,7 +19,15 @@ angular.module('angularProjectApp')
        function getData(params) {
             console.log('getData');
 
-            var categories = [
+             return Productos.get('cars').then(function(response){
+                lodash.map(response.products, function(s){
+                 
+                });
+
+                return response.products;
+            });
+
+           /* var categories = [
                                {"id":1,"Marca":'toyota',"Modelo":'rav4',"Precio":45, "InsertedDate": new Date()},
                                {"id":2,"Marca":'toyota',"Modelo":'rav4',"Precio":45, "InsertedDate": new Date()},
                                {"id":3,"Marca":'toyota',"Modelo":'rav4',"Precio":45, "InsertedDate": new Date()},
@@ -31,7 +39,7 @@ angular.module('angularProjectApp')
                                {"id":9,"Marca":'toyota',"Modelo":'rav4',"Precio":45, "InsertedDate": new Date()}
                                ];
 
-            return categories;
+            return categories;*/
 
            /* return Course.get('angular').then(function(response){
                 lodash.map(response.students, function(s){
