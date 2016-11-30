@@ -10,7 +10,9 @@
 </div>
 
 <div class="edit-content" cg-busy="vmCategoryEdit.promise">
+  
   <form name="formEdit" class="form-horizontal" novalidate>
+    
     <div class="form-group">
       <label class="col-sm-2 control-label">Marca</label>
       <div class="col-sm-4">
@@ -50,15 +52,18 @@
      </div>
 
  <div class="form-group" >
+      
       <label class="col-sm-2 control-label">Created Date</label>
+    
      <div class="col-sm-4">
         <p class="input-group" >
           <input name="date"
                  type="text"
-                 ng-model="vmCategoryEdit.selected.InsertedDate"
+                 class="form-control"
+                 ng-model="vmCategoryEdit.selected.InsertedDateObject"
                  uib-datepicker-popup="{{vmCategoryEdit.dateFormat}}"
                  datepicker-options="vmCategoryEdit.dateOptions"
-                 is-open="vmAngularEdit.isDateOpened"
+                 is-open="vmCategoryEdit.isDateOpened"
                  />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default"
@@ -69,6 +74,7 @@
         </p>
         
        </div>
+
     </div>
 
     <div class="form-group">

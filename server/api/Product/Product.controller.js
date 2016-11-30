@@ -70,8 +70,7 @@ export function update(req, res)
             product.Marca = req.body.Marca;
             product.Modelo = req.body.Modelo;
             product.Precio = req.body.Precio;
-
-            // product.InsertedDate = req.body.InsertedDate;
+            product.InsertedDate = req.body.InsertedDate;
             
             result = product;
           }

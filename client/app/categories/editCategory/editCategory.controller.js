@@ -17,18 +17,18 @@
      vm.isDateOpened = false;
      vm.dateFormat = 'dd-MM-yyyy';
      vm.dateOptions = { maxDate: new Date() };
-     
+
      activate();
      
    function activate() {
       console.log('received', data);
+      data.InsertedDateObject = $moment(data.InsertedDate, 'DD-MM-YYYY').toDate();
       vm.selected = data;
     }
 
      function saveChanges() 
      {
-         console.log('Running update client Service: ' + data.id);
-
+        vm.selected.InsertedDate = $moment(data.InsertedDateObject).format('DD-MM-YYYY');
          vm.promise = Productos.update(vm.selected, { id: 'cars', product: data.id });
 
         vm.promise.then(function(response){
