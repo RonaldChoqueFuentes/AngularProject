@@ -1,14 +1,26 @@
 'use strict';
 
 angular.module('angularProjectApp')
-  .service('Productos', function ($q, $resource) {
+  .service('Productos', function ($q, $resource) 
+  {
 
-   var resource = $resource('/api/products/:id', {id: '@id'});
+   var resource = $resource('/api/products/:id/:product',
+         {
+           id: '@id',
+           product: '@product'
+         },
+           {
+             'put': { method: 'PUT'} 
+           }
+         );
 
     // AngularJS will instantiate a singleton by calling "new" on this function
   
-  function get(id) {
+  function get(id)
+   {
+ 
       var products = $q.defer();
+
       resource.get({id: id}).$promise.then(function(response){
         products.resolve(response);
       },
@@ -19,11 +31,35 @@ angular.module('angularProjectApp')
       );
 
       return products.promise;
-    }
+
+   }
+
+    function update(data, params) 
+    {
+      console.log('Running update client Service');
+      
+      var productQuery = $q.defer();
+
+      resource.put({id: params.id, product: params.product }, data  )
+      .$promise.then
+        (
+           function(response)
+           {
+              productQuery.resolve(response);
+           }, 
+           function(error)
+           {
+                productQuery.reject(error);
+           }
+        );
+      
+      return productQuery.promise;
+    
+  }
+
 
     return {
-      get: get
+      get: get,
+      update: update
     };
-}
-  
-  );
+});

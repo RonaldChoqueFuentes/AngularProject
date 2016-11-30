@@ -40,3 +40,64 @@ export function get(req, res) {
     res.json(array);
   });
 }
+
+export function update(req, res) 
+{
+  console.log('Running update server');
+
+  jsonfile.readFile(FILE, function (err, obj) 
+  {
+     
+    var result = null;
+
+    var almacen = lodash.find(obj.Almacenes, function (Almacen) 
+                  {
+                     return Almacen.key === req.params.id; 
+                  });
+
+    if (!almacen)
+    {
+      res.status(404).send('Almacen Not found: ' + req.params.id);
+    }
+       
+     
+       
+     lodash.forEach(almacen.products, function (product) 
+        {
+
+          if (product.id == req.params.product) 
+          {
+            product.Marca = req.body.Marca;
+            product.Modelo = req.body.Modelo;
+            product.Precio = req.body.Precio;
+
+            // product.InsertedDate = req.body.InsertedDate;
+            
+            result = product;
+          }
+        });
+
+ 
+       if (!result) 
+       {
+         res.status(404).send('Error 404');
+       }
+
+      
+     setTimeout(function ()
+      {
+        jsonfile.writeFile(FILE, {Almacenes: obj.Almacenes},
+            function (err) 
+            {
+                console.error(err);//res.status(500).send('Error 500');
+            }
+         );
+        
+         res.status(200).type('json').json(result);
+       },
+        2000
+    );
+
+  });
+
+}
