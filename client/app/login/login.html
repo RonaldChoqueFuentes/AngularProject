@@ -1,4 +1,6 @@
-<div>
+<div class="login-content" cg-busy="vm.promise">
+
+<form name="formLogin" class="form-horizontal" novalidate>
 
 <div class="container">
  
@@ -12,9 +14,10 @@
         <input type="password" placeholder="{{vm.PasswordMessage}}"  ng-model="vm.Password" name="psw" required>
     </div>
  
-<div>
+ <div>
     <button  ng-click="vm.ValidateLogin()">Login</button>
-</div>
+ </div>
 
   </div>
+</form>
 </div>

@@ -1,26 +1,35 @@
 'use strict';
 
 angular.module('angularProjectApp')
-  .controller('LoginCtrl', function ($state) {
+  .controller('LoginCtrl', function ($state,Usuarios) {
      var vm = this;
      vm.UserName = '';
      vm.Password = '';
      
-     vm.UserNameMessage = 'Enter User Name';
-     vm.PasswordMessage = 'Enter Password';
+     vm.UserNameMessage = 'Enter User Name: ';
+     vm.PasswordMessage = 'Enter Password:';
 
      vm.ValidateLogin = ValidateLogin;
     
      function ValidateLogin()
      {
-       var result = false;
-       if(vm.UserName==='sa' && vm.Password=='123')
-       { 
-         
-         result = true;
-         //$state.
-         $state.go('categories');
-       }
-       
+      console.log('validate login controller');
+      
+      vm.promise = Usuarios.loginUser(vm.UserName,vm.Password);
+      vm.promise.then(function(response)
+      {
+            console.log(response.result);
+
+            if(response.result === true )
+            {
+              $state.go('categories');     
+            }
+
+             if(response.result=== false)
+            {
+              $state.go('login');     
+            }        
+      });
+
      }
   });
