@@ -29,11 +29,11 @@ function DeleteCategoryCtrl($moment, $uibModalInstance, data,Productos)
 
     function remove()
     {
-       /* vm.promise = Productos.update(vm.selected, { id: 'cars', product: data.id });
+        vm.promise = Productos.remove(vm.selected, { id: 'cars', product: data.id });
 
         vm.promise.then(function(response){
             $uibModalInstance.close(response);
-        });*/
+        });
     }
 
 }

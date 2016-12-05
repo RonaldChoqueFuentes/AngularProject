@@ -43,11 +43,15 @@ export function get(req, res) {
 
   export function deleteProduct(req, res)
   {
+          
+   console.log('Running Delete Product Service');
+         
+
   jsonfile.readFile(FILE, function (err, obj) 
   {
      
     var result = null;
-
+   
     var almacen = lodash.find(obj.Almacenes, function (Almacen) 
                   {
                      return Almacen.key === req.params.id; 
@@ -58,18 +62,16 @@ export function get(req, res) {
       res.status(404).send('Almacen Not found: ' + req.params.id);
     }
        
-     
+   
      var deleteProduct = lodash.remove(almacen.products, function (product) 
                {
                   return product.id == req.params.product;
                });
-
  
        if (!deleteProduct) 
        {
          res.status(404).send('Product Not Fount: ' + req.params.product);
        }
-
       
      setTimeout(function ()
       {
@@ -81,7 +83,7 @@ export function get(req, res) {
             }
          );
 
-         res.status(200).type('json').json(deleteProduct);
+         res.status(200).type('json').json(obj);
        },
         2000
     );

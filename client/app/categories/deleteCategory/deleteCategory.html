@@ -11,15 +11,16 @@
     </button>
 </div>
 
+<div class="delete-content" cg-busy="vmDeleteCategory.promise" >
+
 <form name="formDelete" class="form-horizontal" novalidate>
     
     <div class="form-group" >
       <div class="col-sm-offset-2 col-sm-10">
         
         <p class="input-group" >
-
        <span>
-        <button  ng-click="vmDeleteCategory.remove" class="btn btn-primary">
+        <button  ng-click="vmDeleteCategory.remove()" class="btn btn-primary">
           Delete
         </button>
         </span>
@@ -34,3 +35,5 @@
 
 </form>
 </div>
+
+</div>]

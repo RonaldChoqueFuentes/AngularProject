@@ -11,6 +11,10 @@ angular.module('angularProjectApp')
          },
            {
              'put': { method: 'PUT'} 
+           },
+           
+           {
+             'delete': { method: 'DELETE'} 
            }
          );
 
@@ -53,13 +57,34 @@ angular.module('angularProjectApp')
            }
         );
       
-      return productQuery.promise;
-    
+      return productQuery.promise;   
+  }
+
+
+   function remove(data, params)  
+   {   
+      var productQuery = $q.defer();
+
+      resource.delete({id: params.id, product: params.product })
+      .$promise.then
+        (
+           function(response)
+           {
+              productQuery.resolve(response);
+           }, 
+           function(error)
+           {
+              productQuery.reject(error);
+           }
+        );
+
+      return productQuery.promise;   
   }
 
 
     return {
       get: get,
-      update: update
+      update: update,
+      remove:remove
     };
 });
