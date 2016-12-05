@@ -5,6 +5,7 @@ angular.module('angularProjectApp')
       var vm = this;
 
        vm.edit = edit;
+       vm.remove = deleteCategory;
 
        activate();
 
@@ -41,6 +42,26 @@ angular.module('angularProjectApp')
                 category,
                 options,
                 'vmCategoryEdit');
+
+            dialog.result.then(function(s){
+                activate();
+            });
+        }
+
+       
+       function deleteCategory(category)
+       {
+            var options = {
+                size: 'lg',
+                animation:true
+            };
+       
+            var dialog = dialogs.create(
+                'app/categories/deleteCategory/deleteCategory.html',
+                'DeleteCategoryCtrl',
+                category,
+                options,
+                'vmDeleteCategory');
 
             dialog.result.then(function(s){
                 activate();

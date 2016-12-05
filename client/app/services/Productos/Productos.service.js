@@ -40,7 +40,7 @@ angular.module('angularProjectApp')
       
       var productQuery = $q.defer();
 
-      resource.put({id: params.id, product: params.product }, data  )
+      resource.put({id: params.id, product: params.product }, data)
       .$promise.then
         (
            function(response)

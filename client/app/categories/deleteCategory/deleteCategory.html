@@ -1,0 +1,36 @@
+<div>
+
+<div class="modal-header">
+  <h4>Delete Category 
+   <i tooltip-placement="auto bottom-left"  uib-tooltip="tool tip info help" 
+    class="fa fa-question-circle" aria-hidden="true"></i>
+  </h4>
+  
+    <button class="close modal-close-btn" type="button" ng-click="vmDeleteCategory.close()">
+       <i class="fa fa-times fa-lg"></i>
+    </button>
+</div>
+
+<form name="formDelete" class="form-horizontal" novalidate>
+    
+    <div class="form-group" >
+      <div class="col-sm-offset-2 col-sm-10">
+        
+        <p class="input-group" >
+
+       <span>
+        <button  ng-click="vmDeleteCategory.remove" class="btn btn-primary">
+          Delete
+        </button>
+        </span>
+        <span>
+         <button  ng-click="vmDeleteCategory.close()" class="btn btn-primary">
+          Cancel
+         </button>
+         </span>
+        </p>
+      </div>
+    </div>
+
+</form>
+</div>
