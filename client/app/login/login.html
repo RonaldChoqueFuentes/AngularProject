@@ -1,21 +1,31 @@
-<div class="login-content" cg-busy="vm.promise">
+<div class="col-md-6 col-md-offset-3" cg-busy="vm.promise">
 
 <form name="formLogin" class="form-horizontal" novalidate>
 
 <div class="container">
  
-    <div>
-        <label><b>Username</b></label>
-        <input type="text" placeholder="{{vm.UserNameMessage}}" ng-model="vm.UserName" name="uname" required>
+     <div class="form-group">
+        <label class="col-sm-2 control-label">Username:</label>
+        <div class="col-sm-4">
+        <input type="text" class="form-control"  placeholder="{{vm.UserNameMessage}}" ng-model="vm.UserName" name="uname" required>
+        </div>
+      
     </div>
 
-    <div>
-        <label><b>Password</b></label>
-        <input type="password" placeholder="{{vm.PasswordMessage}}"  ng-model="vm.Password" name="psw" required>
+     <div class="form-group">
+        <label class="col-sm-2 control-label">Password:</label>
+        <div class="col-sm-4">
+        <input type="password" class="form-control"  placeholder="{{vm.PasswordMessage}}"  ng-model="vm.Password" name="psw" required>
+       </div>
     </div>
  
- <div>
-    <button  ng-click="vm.ValidateLogin()">Login</button>
+ <div class="form-group">
+     
+ <div class="col-sm-offset-2 col-sm-10">
+    <button  ng-click="vm.ValidateLogin()" class="btn btn-primary">Login</button>
+    <button  ng-click="vm.Cancel()" class="btn btn-primary">Cancel</button>
+
+ </div>
  </div>
 
   </div>
